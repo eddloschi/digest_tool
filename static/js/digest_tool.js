@@ -21,17 +21,23 @@ $(document).ready(function () {
         });
     });
     $('#check').click(function () {
-        $('input:checkbox').prop('checked', true);
+        $('input:checkbox').each(function () {
+            $(this).prop('checked', true);
+            $(this).trigger('change');
+        });
     });
     $('#uncheck').click(function () {
-        $('input:checkbox').prop('checked', false);
+        $('input:checkbox').each(function () {
+            $(this).prop('checked', false);
+            $(this).trigger('change');
+        });
     });
     $('input:checkbox').change(function () {
         if ($(this).is(':checked')) {
             request_digest($(this).val());
         }
         else {
-            $('#'+$(this).val()).html('&nbsp');
+            $('#'+$(this).val()).html('&nbsp;');
         }
     });
 });
