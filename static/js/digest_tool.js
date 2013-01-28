@@ -2,7 +2,7 @@ var request_digest = function (algorithm) {
     $.post('/hash/'+algorithm, { message: $('#message').val() }, function (data) {
         $('#'+algorithm).text(data);
     }).fail(function () {
-        $('#'+algorithm).innerHTML = 'ERROR RETRIEVING RESULT';
+        $('#'+algorithm).text('ERROR RETRIEVING RESULT');
     });
 };
 
