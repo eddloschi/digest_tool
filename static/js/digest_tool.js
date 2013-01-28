@@ -20,4 +20,10 @@ $(document).ready(function () {
             request_digest($(this).val());
         });
     });
+    $('#check').click(function () {
+        $('input:checkbox').prop('checked', true);
+    });
+    $('#uncheck').click(function () {
+        $('input:checkbox').prop('checked', false);
+    });
 });
