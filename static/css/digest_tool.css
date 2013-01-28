@@ -2,3 +2,4 @@
 .algorithm { font-size: 1.25em; font-weight: bold; }
 input[type=checkbox] { margin: 0 0 4px 0; }
 .result { margin-top: 16px; }
+.digest { font-family: monospace; margin-top: 2px; }
