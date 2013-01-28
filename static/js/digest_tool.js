@@ -26,4 +26,12 @@ $(document).ready(function () {
     $('#uncheck').click(function () {
         $('input:checkbox').prop('checked', false);
     });
+    $('input:checkbox').change(function () {
+        if ($(this).is(':checked')) {
+            request_digest($(this).val());
+        }
+        else {
+            $('#'+$(this).val()).html('&nbsp');
+        }
+    });
 });
