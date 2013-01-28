@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Digest Tool</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/digest_tool.css" rel="stylesheet" media="screen">
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="navbar navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <a href="" class="brand">MELB</a>
+          <ul class="nav">
+            <li><a href="" class="active">Digest Tool</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <h1>Digest Tool</h1>
+      <div class="row">
+        <textarea class="message" rows="5" autofocus="autofocus"></textarea>
+      </div>
+      <div class="row">
+        <div class="span12">
+          <button type="button" class="btn btn-success btn-mini">Check all</button>
+          <button type="button" class="btn btn-danger btn-mini">Uncheck all</button>
+        </div>
+      </div>
+      <div class="row result">
+        <div class="span12">
+          <input type="checkbox" checked="checked" value="md5">
+          <span class="algorithm">MD5</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span12">
+          <div id="md5" class="digest"></div>
+        </div>
+      </div>
+      <div class="row result">
+        <div class="span12">
+          <input type="checkbox" checked="checked"  value="sha1">
+          <span class="algorithm">SHA-1</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span12">
+          <div id="sha1"></div>
+        </div>
+      </div>
+      <div class="row result">
+        <div class="span12">
+          <input type="checkbox" checked="checked" value="sha224">
+          <span class="algorithm">SHA-224</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span12">
+          <div id="sha224" class="digest"></div>
+        </div>
+      </div>
+      <div class="row result">
+        <div class="span12">
+          <input type="checkbox" checked="checked" value="sha256">
+          <span class="algorithm">SHA-256</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span12">
+          <div id="sha256" class="digest"></div>
+        </div>
+      </div>
+      <div class="row result">
+        <div class="span12">
+          <input type="checkbox" checked="checked" value="sha384">
+          <span class="algorithm">SHA-384</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span12">
+          <div id="sha384" class="digest"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span12 result">
+          <input type="checkbox" checked="checked" value="sha512">
+          <span class="algorithm">SHA-512</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span12">
+          <div id="sha512" class="dig512"></div>
+        </div>
+      </div>
+      <div class="row result">
+        <div class="span12">
+          <input type="checkbox" va checked="checked"lue="ripemd160">
+          <span class="algorithm">RIPEMD-160</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span12">
+          <div id="ripemd160" class="digest"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
