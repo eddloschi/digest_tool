@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import digest_tool
 import hashlib
 import unittest

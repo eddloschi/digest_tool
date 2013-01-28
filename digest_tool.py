@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import hashlib
 from flask import Flask, abort, request
 
@@ -15,7 +16,7 @@ def hash_message(algorithm):
         h = hashlib.new(algorithm)
     except ValueError:
         abort(404)
-    h.update(request.form['message'])
+    h.update(request.form['message'].encode('utf-8'))
     return h.hexdigest()
 
 if __name__ == '__main__':
