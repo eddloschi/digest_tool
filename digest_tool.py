@@ -8,7 +8,7 @@ SECRET_KEY = 'development'
 
 app = Flask(__name__)
 app.config.from_object(__name__)
-app.config.from_envvar('DIGESTTOOL_SETTINGS')
+app.config.from_envvar('FLASK_SETTINGS')
 
 
 @app.route('/hash/<algorithm>', methods=['POST'])
