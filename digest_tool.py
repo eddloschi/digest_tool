@@ -6,7 +6,6 @@ app = Flask(__name__)
 try:
     app.config.from_envvar('FLASK_SETTINGS')
 except RuntimeError:
-    # configuration
     DEBUG = True
     SECRET_KEY = 'development'
     app.config.from_object(__name__)
