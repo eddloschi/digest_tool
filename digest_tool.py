@@ -2,13 +2,14 @@
 import hashlib
 from flask import Flask, abort, request
 
-# configuration
-DEBUG = True
-SECRET_KEY = 'development'
-
 app = Flask(__name__)
-app.config.from_object(__name__)
-app.config.from_envvar('FLASK_SETTINGS')
+try:
+    app.config.from_envvar('FLASK_SETTINGS')
+except RuntimeError:
+    # configuration
+    DEBUG = True
+    SECRET_KEY = 'development'
+    app.config.from_object(__name__)
 
 
 @app.route('/hash/<algorithm>', methods=['POST'])
