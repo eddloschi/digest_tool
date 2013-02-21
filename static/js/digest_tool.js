@@ -1,16 +1,23 @@
+var requests = [];
+
 var request_digest = function (algorithm) {
-    $.post('/hash/'+algorithm, { message: $('#message').val() }, function (data) {
+    if (requests[algorithm] && requests[algorithm].readyState < 4) {
+        requests[algorithm].abort();
+    }
+    requests[algorithm] = $.post('/hash/'+algorithm, { message: $('#message').val() }, function (data) {
         id = '#'+algorithm;
         if ($(id).hasClass('text-error')) {
             $(id).removeClass('text-error');
         }
         $(id).text(data);
     }).fail(function () {
-        id = '#'+algorithm;
-        if (!$(id).hasClass('text-error')) {
-            $(id).addClass('text-error');
+        if (requests[algorithm].statusText !== 'abort') {
+            id = '#'+algorithm;
+            if (!$(id).hasClass('text-error')) {
+                $(id).addClass('text-error');
+            }
+            $(id).text('ERROR RETRIEVING RESULT');
         }
-        $(id).text('ERROR RETRIEVING RESULT');
     });
 };
 
