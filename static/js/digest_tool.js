@@ -29,13 +29,13 @@ $(document).ready(function () {
         });
     });
     $('#checkall').click(function () {
-        $('input:checkbox').each(function () {
+        $('input:checkbox:not(:checked)').each(function () {
             $(this).prop('checked', true);
             $(this).trigger('change');
         });
     });
     $('#uncheckall').click(function () {
-        $('input:checkbox').each(function () {
+        $('input:checkbox:checked').each(function () {
             $(this).prop('checked', false);
             $(this).trigger('change');
         });
