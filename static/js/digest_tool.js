@@ -48,6 +48,9 @@ $(document).ready(function () {
             request_digest($(this).val());
         }
         else {
+            if (requests[$(this).val()] && requests[$(this).val()].readyState < 4) {
+                requests[$(this).val()].abort();
+            }
             $('#'+$(this).val()).html('&nbsp;');
         }
     });
