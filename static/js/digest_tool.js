@@ -23,10 +23,15 @@ var request_digest = function (algorithm) {
 };
 
 $(document).ready(function () {
+    var timeoutID = null;
+
     $('#message').bind('input propertychange', function () {
-        $('input:checkbox:checked').each(function() {
-            request_digest($(this).val());
-        });
+        clearTimeout(timeoutID);
+        timeoutID = setTimeout(function() {
+            $('input:checkbox:checked').each(function() {
+                request_digest($(this).val());
+            });
+        }, 300);
     });
     $('#checkall').click(function () {
         $('input:checkbox:not(:checked)').each(function () {
