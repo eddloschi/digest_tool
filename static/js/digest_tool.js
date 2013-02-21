@@ -28,13 +28,13 @@ $(document).ready(function () {
             request_digest($(this).val());
         });
     });
-    $('#check').click(function () {
+    $('#checkall').click(function () {
         $('input:checkbox').each(function () {
             $(this).prop('checked', true);
             $(this).trigger('change');
         });
     });
-    $('#uncheck').click(function () {
+    $('#uncheckall').click(function () {
         $('input:checkbox').each(function () {
             $(this).prop('checked', false);
             $(this).trigger('change');
